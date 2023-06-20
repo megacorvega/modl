@@ -15,13 +15,12 @@ import urllib.request
 # NOTE: This will download the most recent version of the mod, and does not filter for desired Minecraft version.
 
 # Read Modrinth project IDs from list
-projects = open("projects.txt", "r").read().strip()
+with open("projects.txt", "r") as f:
+  projects = [line.rstrip('\n') for line in f]
 
-# Convert projects text file to comma separated list
-projectList = projects.split("\n")
-
-for projects in projectList:
-  link = "https://api.modrinth.com/v2/project/" + projects + "/version"
+# Cycle through projects and download .jar files
+for project in projects:
+  link = "https://api.modrinth.com/v2/project/" + project + "/version"
   page = requests.get(link).json()
 
   name = page[0]['name']
