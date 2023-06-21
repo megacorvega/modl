@@ -1,4 +1,4 @@
-# modrinthdl
+# modl
 This program allows you auto update mods from Modrinth based on a modlist you define. Everything is run from the 'modrinthdl' shell script included in this repo.
 
 ## INSTRUCTIONS
