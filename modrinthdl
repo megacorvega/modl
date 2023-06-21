@@ -1,0 +1,84 @@
+#!/bin/bash
+
+################################################################################
+# MODRINTHDL                                                                   #
+################################################################################
+
+Update()
+{
+   python3 dl.py
+   mv *.jar ..
+}
+Help()
+{
+   # Display Help
+   echo
+   echo "modrinthdl Mod Downloader"
+   echo
+   echo "Syntax: modrinthdl [-u|h|a|r|s]"
+   echo "options:"
+   echo "u     Update all mods"
+   echo "h     Print this Help"
+   echo "a     Add mod to active list"
+   echo "r     Remove mod from active list"
+   echo "s     Show all active mods"
+   echo
+   echo  "--------------------------------------------------------"
+   echo
+   echo "Current active mods"
+   echo
+   cat details.txt
+}
+
+Add()
+{
+   echo "Current active mods"
+   echo "-------------------"
+   cat details.txt
+   echo
+   read -p "Enter Mod ID to add (ex. P7dR8mSH): "
+   echo "$REPLY" | sh filter.sh >> projects.txt
+   echo
+   python3 projectcheck.py
+}
+
+Remove()
+{
+   echo "Current active mods"
+   echo "-------------------"
+   cat details.txt
+   echo
+   read -p "Enter Mod ID to remove (ex. P7dR8mSH): "
+   grep -v "^$REPLY$" projects.txt > tmpfile && mv tmpfile projects.txt
+   echo
+   python3 projectcheck.py
+}
+
+Show()
+{
+   echo "Current active mods"
+   echo "-------------------"
+   cat details.txt
+}
+
+while getopts ":uhars" option; do
+        case "${option}" in
+                u) u=${OPTARG}
+                   Update
+                   ;;
+                h) h=${OPTARG}
+                   Help
+                   exit;;
+                a) a=${OPTARG}
+                   Add
+                   ;;
+                r) r=${OPTARG}
+                   Remove
+                   ;;
+                s) s=${OPTARG}
+                   Show
+                   ;;
+                *) echo "Invalid input, please enter option [-u|h|a|r]"
+                   exit;;
+        esac
+done
