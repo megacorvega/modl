@@ -10,7 +10,7 @@ Update()
    case $yn in 
 	  [yY] ) echo "Deleting old .jars";
             cd .. && rm *.jar;
-            cd modrinthdl;
+            cd modl;
             echo "Updating...";
             python3 dl.py;
             echo "Moving new .jar files to mod folder";
@@ -31,9 +31,9 @@ Help()
 {
    # Display Help
    echo
-   echo "modrinthdl Mod Downloader"
+   echo "Modrinth Mod Downloader"
    echo
-   echo "Syntax: modrinthdl [-u|h|a|r|s]"
+   echo "Syntax: modl [-u|h|a|r|s]"
    echo "options:"
    echo "u     Update all mods"
    echo "h     Print this Help"
