@@ -4,7 +4,7 @@ This program allows you auto update mods from Modrinth based on a modlist you de
 ## INSTRUCTIONS
 
  1. Clone this repo directly to your mods folder
- 2. Project ids can be added / removed using the commands './modrinthdl -a' and './modrinthdl -s'
+ 2. Project ids can be added / removed using the commands './modrinthdl -a' and './modrinthdl -r'
  3. Run './modrinthdl -u' to download mods, and move them to the top level of the 'mods' folder
 
  NOTES: 
