@@ -1,18 +1,18 @@
-import requests
-import json
-import urllib.request
-
 ###########################
 # MODRINTH MOD DOWNLOADER #
 ###########################
 
 # INSTRUCTIONS
 #
-# 1.)  Place this python script in your mods folder
-# 2.)  Add Modrinth project IDs to the 'projects.txt' file. (One ID per line)
-# 3.)  Run python script
+# 1. Place this python script in your mods folder
+# 2. Add Modrinth project IDs to the 'projects.txt' file. (One ID per line)
+# 3. Run python script
 #
 # NOTE: This will download the most recent version of the mod, and does not filter for desired Minecraft version.
+
+import requests
+import json
+import urllib.request
 
 # Read Modrinth project IDs from list
 with open("projects.txt", "r") as f:
