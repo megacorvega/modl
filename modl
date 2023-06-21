@@ -55,7 +55,7 @@ Add()
    cat details.txt
    echo
    read -p "Enter Mod ID to add (ex. P7dR8mSH): "
-   echo "$REPLY" | sh filter.sh >> projects.txt
+   grep -xqF "$REPLY" projects.txt || echo "$REPLY" >> projects.txt
    echo
    python3 projectcheck.py
 }
