@@ -6,8 +6,26 @@
 
 Update()
 {
-   python3 dl.py
-   mv *.jar ..
+   read -p "Do you want to delete all current .jar files from mod folder? (Y/n) " yn
+   case $yn in 
+	  [yY] ) echo "Deleting old .jars";
+            cd .. && rm *.jar;
+            cd modrinthdl;
+            echo "Updating...";
+            python3 dl.py;
+            echo "Moving new .jar files to mod folder";
+            mv *.jar ..;
+            echo "Done.";
+		      exit;;
+	  [nN] ) echo "Updating...";
+            python3 dl.py;
+            echo "Moving new .jar files to mod folder";
+            mv *.jar ..;
+            echo "Done.";
+		      exit;;
+	     * ) echo "Invalid response";
+		      exit 1;;
+   esac
 }
 Help()
 {

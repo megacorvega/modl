@@ -1,10 +1,12 @@
 # modrinthdl
-Downloads the most recent version of Minecraft Mods from modrinth.
+This program allows you auto update mods from Modrinth based on a modlist you define. Everything is run from the 'modrinthdl' shell script included in this repo.
 
 ## INSTRUCTIONS
 
- 1. Place this python script and project.txt file in your mods folder
- 2. Add desired Modrinth project IDs to the 'projects.txt' file. (One ID per line)
- 3. Run python script
+ 1. Clone this repo directly to your mods folder
+ 2. Project ids can be added / removed using the commands './modrinthdl -a' and './modrinthdl -s'
+ 3. Run './modrinthdl -u' to download mods, and move them to the top level of the 'mods' folder
 
- NOTE: This will download the most recent version of the mod, and does not filter for desired Minecraft version.
+ NOTES: 
+ 
+ - This will download the most recent version of the mod, and does not filter for desired Minecraft version.
