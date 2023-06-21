@@ -7,7 +7,7 @@ This program allows you auto update mods from Modrinth based on a modlist you de
  2. Project ids can be added / removed using the commands `./modl -a` and `./modl -r`
  3. Run `./modl -u` to download mods, and move them to the top level of the `mods` folder
 
-> **warning**
+> **Warning**
 > modl will download the most recent version of the mod, and does not filter for desired Minecraft version.
 
 ## COMMON ERRORS
